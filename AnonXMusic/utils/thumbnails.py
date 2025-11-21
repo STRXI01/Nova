@@ -8,7 +8,7 @@ from youtubesearchpython.__future__ import VideosSearch
 
 FAILED = "https://files.catbox.moe/6xpaz5.jpg"
 
-APPLE_TEMPLATE_PATH = "OpusV/assets/apple_music.png"
+APPLE_TEMPLATE_PATH = "AnonXMusic/assets/apple_music.png"
 
 def _resample_lanczos():
     try:
@@ -248,9 +248,9 @@ async def get_thumb(videoid):
         fg = (0, 0, 0)
         muted = (120, 120, 120)
 
-        title_font_path = "OpusV/assets/font.ttf"
-        meta_font = safe_font("OpusV/assets/font2.ttf", 22)
-        small_font = safe_font("OpusV/assets/font.ttf", 22)
+        title_font_path = "AnonXMusic/assets/font.ttf"
+        meta_font = safe_font("AnonXMusic/assets/font2.ttf", 22)
+        small_font = safe_font("AnonXMusic/assets/font.ttf", 22)
 
         INNER_PAD = 36
         text_x = max(panel_x0 + INNER_PAD, album_x + album_w + GAP)
