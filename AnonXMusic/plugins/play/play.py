@@ -24,7 +24,7 @@ from AnonXMusic.utils.logger import play_logs
 from AnonXMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
-sticker_id = "CAACAgUAAxkBAAINvWjAb6tTIjz_7L3eyNVXOF-zg-JLAAJPDAACtYcQV6V1yMr2QhDYHgQ"
+sticker_id = "CAACAgQAAxkBAAKVyWgiJuZp9mYayqB5RF9NbOOShfhiAAJaFwACk28RUV8Y32sv5D6oHgQ"
 
 
 @app.on_message(
@@ -56,10 +56,13 @@ async def play_commnd(
     url,
     fplay,
 ):
-    mystic = await message.reply_sticker(sticker=sticker_id)
-    if channel:
-        await mystic.delete()
-        mystic = await message.reply_text(_["play_2"].format(channel))
+    #mystic = await message.reply_sticker(sticker=sticker_id)
+    #if channel:
+      #  await mystic.delete()
+     #   mystic = await message.reply_text(_["play_2"].format(channel))
+    mystic = await message.reply_text(
+        _["play_2"].format(channel) if channel else _["play_1"]
+    )
     plist_id = None
     slider = None
     plist_type = None
@@ -746,4 +749,5 @@ async def slider_queries(client, CallbackQuery, _):
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
+
 
